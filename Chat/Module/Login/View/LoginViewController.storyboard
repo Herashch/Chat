@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="Ek4-gn-LqY">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="zPm-2q-fGg" customClass="LoginViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Xl-if-V9g">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginGirl" translatesAutoresizingMaskIntoConstraints="NO" id="82i-9j-jeS">
+                                <rect key="frame" x="20" y="64" width="350" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="iTR-gA-Xlq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlA-1B-DI5">
+                                <rect key="frame" x="137" y="284" width="116" height="64"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zz8-9m-Kwe">
+                                <rect key="frame" x="60" y="368" width="270" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUh-Wb-aNg">
+                                <rect key="frame" x="60" y="422" width="270" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnO-Bl-Enz">
+                                <rect key="frame" x="161" y="476" width="68" height="53"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="32"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login" destination="zPm-2q-fGg" eventType="touchUpInside" id="DKe-ub-eaN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wvR-fq-p4A"/>
+                        <color key="backgroundColor" red="1" green="0.93015259500000003" blue="0.87109452489999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zUh-Wb-aNg" firstAttribute="leading" secondItem="wvR-fq-p4A" secondAttribute="leading" constant="60" id="006-VU-NKY"/>
+                            <constraint firstItem="MlA-1B-DI5" firstAttribute="centerX" secondItem="82i-9j-jeS" secondAttribute="centerX" id="6S2-YT-bBE"/>
+                            <constraint firstItem="zUh-Wb-aNg" firstAttribute="centerX" secondItem="82i-9j-jeS" secondAttribute="centerX" id="9xO-sT-wG9"/>
+                            <constraint firstItem="zz8-9m-Kwe" firstAttribute="leading" secondItem="wvR-fq-p4A" secondAttribute="leading" constant="60" id="E2c-l5-NGe"/>
+                            <constraint firstItem="zUh-Wb-aNg" firstAttribute="top" secondItem="zz8-9m-Kwe" secondAttribute="bottom" constant="20" id="HUC-iy-o5I"/>
+                            <constraint firstItem="wvR-fq-p4A" firstAttribute="trailing" secondItem="82i-9j-jeS" secondAttribute="trailing" constant="20" id="NZU-wK-gHi"/>
+                            <constraint firstItem="zz8-9m-Kwe" firstAttribute="top" secondItem="MlA-1B-DI5" secondAttribute="bottom" constant="20" id="PLM-mz-ck0"/>
+                            <constraint firstItem="zz8-9m-Kwe" firstAttribute="centerX" secondItem="82i-9j-jeS" secondAttribute="centerX" id="Qas-je-Gwc"/>
+                            <constraint firstItem="82i-9j-jeS" firstAttribute="top" secondItem="wvR-fq-p4A" secondAttribute="top" constant="20" id="Rzy-HE-sSY"/>
+                            <constraint firstItem="82i-9j-jeS" firstAttribute="leading" secondItem="wvR-fq-p4A" secondAttribute="leading" constant="20" id="bcu-IJ-K97"/>
+                            <constraint firstItem="MlA-1B-DI5" firstAttribute="top" secondItem="82i-9j-jeS" secondAttribute="bottom" constant="20" id="dVl-JZ-sbI"/>
+                            <constraint firstItem="cnO-Bl-Enz" firstAttribute="top" secondItem="zUh-Wb-aNg" secondAttribute="bottom" constant="20" id="dhz-gC-OkI"/>
+                            <constraint firstItem="cnO-Bl-Enz" firstAttribute="centerX" secondItem="82i-9j-jeS" secondAttribute="centerX" id="i2I-Sg-f3T"/>
+                            <constraint firstItem="wvR-fq-p4A" firstAttribute="trailing" secondItem="zz8-9m-Kwe" secondAttribute="trailing" constant="60" id="icu-Ng-uNr"/>
+                            <constraint firstItem="wvR-fq-p4A" firstAttribute="trailing" secondItem="zUh-Wb-aNg" secondAttribute="trailing" constant="60" id="t52-Ir-qaa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="zz8-9m-Kwe" id="tV8-XH-YKR"/>
+                        <outlet property="passwordTextField" destination="zUh-Wb-aNg" id="ZF6-Pf-mNI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAo-Bm-ZA6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LoginGirl" width="2000" height="2000"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
