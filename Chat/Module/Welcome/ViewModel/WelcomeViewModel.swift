@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol WelcomeViewModelProtocol where Self: AnyObject {
+protocol WelcomeViewModelProtocol {
     var login: Command { get }
     var register: Command { get }
 }

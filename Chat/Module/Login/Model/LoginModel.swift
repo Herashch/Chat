@@ -16,7 +16,6 @@ struct LoginModel {
 }
 
 extension LoginModel {
-    
     func updateEmailAndPassword(_ email: String, _ password: String) -> Self {
         .init(email: email, password: password)
     }

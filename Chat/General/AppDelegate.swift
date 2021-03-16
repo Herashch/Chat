@@ -28,10 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private extension AppDelegate {
     func configureView() {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         let coordinator = WelcomeCoordinator()
-        self.window?.rootViewController = coordinator.configure()
-        self.window?.makeKeyAndVisible()
+        window?.overrideUserInterfaceStyle = .light
+        window?.rootViewController = coordinator.configure()
+        window?.makeKeyAndVisible()
     }
 }
 

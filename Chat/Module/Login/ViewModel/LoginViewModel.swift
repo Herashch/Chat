@@ -15,13 +15,11 @@ protocol LoginViewModelProtocol where Self: AnyObject {
 
 final class LoginViewModel: LoginViewModelProtocol {
     
-    
     // MARK: - Private properties
     
     private var entity: LoginModel = .initial
     private let view: LoginViewControllerProtocol!
     private let coordinator: LoginCoordinatorProtocol!
-    
     
     // MARK: - Inits
     
@@ -44,13 +42,15 @@ final class LoginViewModel: LoginViewModelProtocol {
     
 }
 
+// MARK: - Private methods
+
 private extension LoginViewModel {
     func login() {
         Auth.auth().signIn(withEmail: entity.email, password: entity.password) { authResult, error in
             if error != nil {
                 self.view.showAlert()
             } else {
-                print("Login")
+                self.coordinator.toHome()
             }
         }
     }

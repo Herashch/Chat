@@ -26,6 +26,7 @@ final class LoginViewController: UIViewController, StoryboardCreatable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
     }
     
     // MARK: - Actions
@@ -33,6 +34,18 @@ final class LoginViewController: UIViewController, StoryboardCreatable {
     @IBAction func login() {
         viewModel.updateEntity(emailTextField.text ?? "", passwordTextField.text ?? "")
         viewModel.toHome.perform()
+    }
+}
+
+// MARK: - Private methods
+
+private extension LoginViewController {
+    func setupView() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 

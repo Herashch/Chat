@@ -30,7 +30,6 @@ class BaseNavigationVC: UINavigationController, StoryboardCreatable {
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
         navigationBar.tintColor = .white
-        defaultStatusBarStyle = false
         
         let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.titleTextAttributes = textAttributes

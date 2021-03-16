@@ -8,7 +8,6 @@
 import UIKit
 
 protocol LoginCoordinatorProtocol {
-    func close()
     func toHome()
     func start()
 }
@@ -29,12 +28,9 @@ final class LoginCoordinator {
 // MARK: - LoginCoordinatorProtocol
 
 extension LoginCoordinator: LoginCoordinatorProtocol {
-    func close() {
-        navigation.popViewController(animated: true)
-    }
-    
     func toHome() {
-        
+        let coordinator = HomeCoordinator()
+        coordinator.start()
     }
     
     func start() {

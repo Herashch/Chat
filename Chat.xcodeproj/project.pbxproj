@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C13912CB2600B36D00C5F1EA /* UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13912CA2600B36D00C5F1EA /* UITextFieldDelegate.swift */; };
+		C13912CF2600B4B400C5F1EA /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13912CE2600B4B400C5F1EA /* UIViewController.swift */; };
+		C13912D52600B90900C5F1EA /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13912D42600B90900C5F1EA /* HomeCoordinator.swift */; };
+		C13912D82600C20C00C5F1EA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13912D72600C20C00C5F1EA /* HomeViewModel.swift */; };
 		C15BB73325FF6F5800B69E5D /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BB73225FF6F5800B69E5D /* Command.swift */; };
 		C15BB74325FF77D100B69E5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F9763825FB867B0031B760 /* Assets.xcassets */; };
 		C15BB74825FF78D500B69E5D /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BB74725FF78D500B69E5D /* WelcomeCoordinator.swift */; };
@@ -32,6 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C13912CA2600B36D00C5F1EA /* UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldDelegate.swift; sourceTree = "<group>"; };
+		C13912CE2600B4B400C5F1EA /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		C13912D42600B90900C5F1EA /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		C13912D72600C20C00C5F1EA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C15BB73225FF6F5800B69E5D /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		C15BB74725FF78D500B69E5D /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
 		C15BB74B25FF7BA200B69E5D /* StoryboardCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardCreatable.swift; sourceTree = "<group>"; };
@@ -69,6 +77,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C13912D12600B8D500C5F1EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C15BB77125FFB5BA00B69E5D /* HomeViewController.swift */,
+				C15BB77425FFB5C800B69E5D /* HomeViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C13912D22600B8DE00C5F1EA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C13912D72600C20C00C5F1EA /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C13912D32600B8E700C5F1EA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C13912D42600B90900C5F1EA /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		C15BB73025FF6E2500B69E5D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +129,8 @@
 			children = (
 				C15BB74B25FF7BA200B69E5D /* StoryboardCreatable.swift */,
 				C15BB76825FFA78E00B69E5D /* UINavigationController.swift */,
+				C13912CA2600B36D00C5F1EA /* UITextFieldDelegate.swift */,
+				C13912CE2600B4B400C5F1EA /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -184,8 +219,9 @@
 		C1F9765E25FB916A0031B760 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C15BB77125FFB5BA00B69E5D /* HomeViewController.swift */,
-				C15BB77425FFB5C800B69E5D /* HomeViewController.storyboard */,
+				C13912D32600B8E700C5F1EA /* Coordinator */,
+				C13912D12600B8D500C5F1EA /* View */,
+				C13912D22600B8DE00C5F1EA /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -306,8 +342,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C15BB74C25FF7BA200B69E5D /* StoryboardCreatable.swift in Sources */,
+				C13912D82600C20C00C5F1EA /* HomeViewModel.swift in Sources */,
 				C15BB77825FFC5B500B69E5D /* LoginModel.swift in Sources */,
 				C15BB76925FFA78E00B69E5D /* UINavigationController.swift in Sources */,
+				C13912D52600B90900C5F1EA /* HomeCoordinator.swift in Sources */,
 				C15BB76225FF9F9900B69E5D /* LoginViewContoller.swift in Sources */,
 				C1F9763425FB867A0031B760 /* WelcomeViewController.swift in Sources */,
 				C15BB76C25FFAA2200B69E5D /* LoginCoordinator.swift in Sources */,
@@ -316,8 +354,10 @@
 				C15BB74825FF78D500B69E5D /* WelcomeCoordinator.swift in Sources */,
 				C15BB76F25FFB50300B69E5D /* LoginViewModel.swift in Sources */,
 				C1F9763225FB867A0031B760 /* SceneDelegate.swift in Sources */,
+				C13912CB2600B36D00C5F1EA /* UITextFieldDelegate.swift in Sources */,
 				C15BB76625FFA16100B69E5D /* BaseNavigationVC.swift in Sources */,
 				C15BB77225FFB5BA00B69E5D /* HomeViewController.swift in Sources */,
+				C13912CF2600B4B400C5F1EA /* UIViewController.swift in Sources */,
 				C15BB73325FF6F5800B69E5D /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
