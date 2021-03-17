@@ -11,6 +11,13 @@
 		C13912CF2600B4B400C5F1EA /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13912CE2600B4B400C5F1EA /* UIViewController.swift */; };
 		C13912D52600B90900C5F1EA /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13912D42600B90900C5F1EA /* HomeCoordinator.swift */; };
 		C13912D82600C20C00C5F1EA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13912D72600C20C00C5F1EA /* HomeViewModel.swift */; };
+		C13913012600DD9500C5F1EA /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13913002600DD9500C5F1EA /* ChatListViewController.swift */; };
+		C13913092600E69300C5F1EA /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13913082600E69300C5F1EA /* ChatListCell.swift */; };
+		C139130D2600E6A300C5F1EA /* ChatListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C139130C2600E6A300C5F1EA /* ChatListCell.xib */; };
+		C13913132600E80D00C5F1EA /* ChatListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13913122600E80D00C5F1EA /* ChatListCoordinator.swift */; };
+		C13913172600E83000C5F1EA /* ChatListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13913162600E83000C5F1EA /* ChatListModel.swift */; };
+		C139131A2600E83F00C5F1EA /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13913192600E83F00C5F1EA /* ChatListViewModel.swift */; };
+		C139131F2601171300C5F1EA /* ChatListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C139131E2601171300C5F1EA /* ChatListViewController.storyboard */; };
 		C15BB73325FF6F5800B69E5D /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BB73225FF6F5800B69E5D /* Command.swift */; };
 		C15BB74325FF77D100B69E5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F9763825FB867B0031B760 /* Assets.xcassets */; };
 		C15BB74825FF78D500B69E5D /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BB74725FF78D500B69E5D /* WelcomeCoordinator.swift */; };
@@ -40,6 +47,13 @@
 		C13912CE2600B4B400C5F1EA /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C13912D42600B90900C5F1EA /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		C13912D72600C20C00C5F1EA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C13913002600DD9500C5F1EA /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		C13913082600E69300C5F1EA /* ChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
+		C139130C2600E6A300C5F1EA /* ChatListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListCell.xib; sourceTree = "<group>"; };
+		C13913122600E80D00C5F1EA /* ChatListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCoordinator.swift; sourceTree = "<group>"; };
+		C13913162600E83000C5F1EA /* ChatListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListModel.swift; sourceTree = "<group>"; };
+		C13913192600E83F00C5F1EA /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatListViewModel.swift; path = Chat/Module/ChatList/Model/ChatListViewModel.swift; sourceTree = SOURCE_ROOT; };
+		C139131E2601171300C5F1EA /* ChatListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatListViewController.storyboard; sourceTree = "<group>"; };
 		C15BB73225FF6F5800B69E5D /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		C15BB74725FF78D500B69E5D /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
 		C15BB74B25FF7BA200B69E5D /* StoryboardCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardCreatable.swift; sourceTree = "<group>"; };
@@ -100,6 +114,60 @@
 				C13912D42600B90900C5F1EA /* HomeCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		C13912DC2600D85500C5F1EA /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				C13913102600E6CC00C5F1EA /* Coordinator */,
+				C13913112600E6D200C5F1EA /* Model */,
+				C13913062600E61700C5F1EA /* View */,
+				C139130F2600E6C100C5F1EA /* ViewModel */,
+			);
+			path = ChatList;
+			sourceTree = "<group>";
+		};
+		C13913062600E61700C5F1EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C13913072600E62000C5F1EA /* Cell */,
+				C13913002600DD9500C5F1EA /* ChatListViewController.swift */,
+				C139131E2601171300C5F1EA /* ChatListViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C13913072600E62000C5F1EA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C13913082600E69300C5F1EA /* ChatListCell.swift */,
+				C139130C2600E6A300C5F1EA /* ChatListCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C139130F2600E6C100C5F1EA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C13913192600E83F00C5F1EA /* ChatListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C13913102600E6CC00C5F1EA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C13913122600E80D00C5F1EA /* ChatListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		C13913112600E6D200C5F1EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C13913162600E83000C5F1EA /* ChatListModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C15BB73025FF6E2500B69E5D /* Helpers */ = {
@@ -209,6 +277,7 @@
 		C1F9765C25FB88060031B760 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C13912DC2600D85500C5F1EA /* ChatList */,
 				C1F9765E25FB916A0031B760 /* Home */,
 				C15BB75825FF9E7500B69E5D /* Login */,
 				C1F9766825FB97500031B760 /* Welcome */,
@@ -326,9 +395,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C15BB74325FF77D100B69E5D /* Assets.xcassets in Resources */,
+				C139131F2601171300C5F1EA /* ChatListViewController.storyboard in Resources */,
 				C1F9763C25FB867B0031B760 /* LaunchScreen.storyboard in Resources */,
 				C15BB77525FFB5C800B69E5D /* HomeViewController.storyboard in Resources */,
 				C15BB75F25FF9F8A00B69E5D /* LoginViewController.storyboard in Resources */,
+				C139130D2600E6A300C5F1EA /* ChatListCell.xib in Resources */,
 				C1F9766025FB93BF0031B760 /* GoogleService-Info.plist in Resources */,
 				C1F9763725FB867A0031B760 /* WelcomeViewController.storyboard in Resources */,
 			);
@@ -343,8 +414,12 @@
 			files = (
 				C15BB74C25FF7BA200B69E5D /* StoryboardCreatable.swift in Sources */,
 				C13912D82600C20C00C5F1EA /* HomeViewModel.swift in Sources */,
+				C13913012600DD9500C5F1EA /* ChatListViewController.swift in Sources */,
 				C15BB77825FFC5B500B69E5D /* LoginModel.swift in Sources */,
 				C15BB76925FFA78E00B69E5D /* UINavigationController.swift in Sources */,
+				C139131A2600E83F00C5F1EA /* ChatListViewModel.swift in Sources */,
+				C13913092600E69300C5F1EA /* ChatListCell.swift in Sources */,
+				C13913132600E80D00C5F1EA /* ChatListCoordinator.swift in Sources */,
 				C13912D52600B90900C5F1EA /* HomeCoordinator.swift in Sources */,
 				C15BB76225FF9F9900B69E5D /* LoginViewContoller.swift in Sources */,
 				C1F9763425FB867A0031B760 /* WelcomeViewController.swift in Sources */,
@@ -359,6 +434,7 @@
 				C15BB77225FFB5BA00B69E5D /* HomeViewController.swift in Sources */,
 				C13912CF2600B4B400C5F1EA /* UIViewController.swift in Sources */,
 				C15BB73325FF6F5800B69E5D /* Command.swift in Sources */,
+				C13913172600E83000C5F1EA /* ChatListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

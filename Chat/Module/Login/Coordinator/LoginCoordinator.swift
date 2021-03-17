@@ -30,13 +30,15 @@ final class LoginCoordinator {
 extension LoginCoordinator: LoginCoordinatorProtocol {
     func toHome() {
         let coordinator = HomeCoordinator()
-        coordinator.start()
+        let view = coordinator.start()
+        view.modalPresentationStyle = .fullScreen
+        navigation.present(view, animated: true, completion: nil)
     }
     
     func start() {
-        let controller = LoginViewController.createFromStoryboard()
-        let viewModel = LoginViewModel(coordinator: self, view: controller)
-        controller.viewModel = viewModel
-        navigation.pushViewController(controller)
+        let viewController = LoginViewController.createFromStoryboard()
+        let viewModel = LoginViewModel(coordinator: self, view: viewController)
+        viewController.viewModel = viewModel
+        navigation.pushViewController(viewController)
     }
 }

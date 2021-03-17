@@ -5,10 +5,11 @@
 //  Created by Ivan Herashchenko on 16.03.2021.
 //
 
-import Foundation
+import UIKit
 
 protocol HomeViewModelProtocol where Self: AnyObject {
     func changeView(index: Int)
+    func getViews() -> [UIViewController]
 }
 
 final class HomeViewModel: HomeViewModelProtocol {
@@ -17,17 +18,30 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     private let view: HomeViewControllerProtocol!
     private let coordinator: HomeCoordinatorProtocol!
+    private var controllers: [UIViewController] = []
     
     // MARK: - Inits
     
     init(coordinator: HomeCoordinatorProtocol, view: HomeViewControllerProtocol) {
         self.coordinator = coordinator
         self.view = view
+        self.setupViewControllers()
     }
     
     // MARK: - HomeViewModelProtocol
     
     func changeView(index: Int) {
         
+    }
+    
+    func getViews() -> [UIViewController] {
+        return controllers
+    }
+}
+
+private extension HomeViewModel {
+    func setupViewControllers () {
+        let coordinator = ChatListCoordinator()
+        controllers.append(coordinator.start())
     }
 }

@@ -9,6 +9,8 @@ import UIKit
 
 class BaseNavigationVC: UINavigationController, StoryboardCreatable {
     
+    // MARK: - Public properties
+    
 //    static var storyboardName: String { return R.storyboard.main.name }
     
     var defaultStatusBarStyle = true {
@@ -21,10 +23,14 @@ class BaseNavigationVC: UINavigationController, StoryboardCreatable {
         return defaultStatusBarStyle ? .default : .lightContent
     }
     
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.tintColor = .black
     }
+    
+    // MARK: - Public methods
     
     func changeToWhite() {
         navigationBar.setBackgroundImage(UIImage(), for: .default)

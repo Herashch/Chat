@@ -5,23 +5,21 @@
 //  Created by Ivan Herashchenko on 16.03.2021.
 //
 
-import Foundation
+import UIKit
 
 protocol HomeCoordinatorProtocol {
-    func start()
+    func start() -> UIViewController
 }
 
-final class HomeCoordinator {
-    private var navigation: BaseNavigationVC!
-}
+final class HomeCoordinator { }
 
 // MARK: - HomeCordinatorProtocol
 
 extension HomeCoordinator: HomeCoordinatorProtocol {
-    func start() {
-        let controller = HomeViewController.createFromStoryboard()
-        let viewModel = HomeViewModel(coordinator: self, view: controller)
-        controller.viewModel = viewModel
-        navigation.pushViewController(controller)
+    func start() -> UIViewController {
+        let viewController = HomeViewController.createFromStoryboard()
+        let viewModel = HomeViewModel(coordinator: self, view: viewController)
+        viewController.viewModel = viewModel
+        return viewController
     }
 }
