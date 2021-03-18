@@ -9,6 +9,7 @@ import Foundation
 
 protocol ChatListViewModelProtocol {
     func getElements() -> [ChatListCell.ViewModel]
+    var openChat: Command { get }
 }
 
 final class ChatListViewModel: ChatListViewModelProtocol {
@@ -34,6 +35,12 @@ final class ChatListViewModel: ChatListViewModelProtocol {
             return ChatListCell.ViewModel(avatar: $0.element.avatar, content: $0.element.content, title: $0.element.title, time: $0.element.time, action: $0.element.action)
         }
     }
+    
+    lazy var openChat: Command = {
+        return .init { [unowned self] in
+            self.coordinator.toChat()
+        }
+    }()
 }
 
 // MARK: - Private methods

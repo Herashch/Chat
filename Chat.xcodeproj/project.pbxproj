@@ -32,6 +32,12 @@
 		C15BB77225FFB5BA00B69E5D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BB77125FFB5BA00B69E5D /* HomeViewController.swift */; };
 		C15BB77525FFB5C800B69E5D /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15BB77425FFB5C800B69E5D /* HomeViewController.storyboard */; };
 		C15BB77825FFC5B500B69E5D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BB77725FFC5B500B69E5D /* LoginModel.swift */; };
+		C18DB8A0260366DD0012604C /* ChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DB89F260366DD0012604C /* ChatViewCell.swift */; };
+		C18DB8A32603672B0012604C /* ChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18DB8A22603672B0012604C /* ChatViewCell.xib */; };
+		C19F07172602511A00B02697 /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F07162602511A00B02697 /* ChatCoordinator.swift */; };
+		C19F072F260253B800B02697 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F072E260253B800B02697 /* ChatViewController.swift */; };
+		C19F07322602548F00B02697 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F07312602548F00B02697 /* ChatViewModel.swift */; };
+		C19F07352602616900B02697 /* ChatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C19F07342602616900B02697 /* ChatViewController.storyboard */; };
 		C1F9763025FB867A0031B760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F9762F25FB867A0031B760 /* AppDelegate.swift */; };
 		C1F9763225FB867A0031B760 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F9763125FB867A0031B760 /* SceneDelegate.swift */; };
 		C1F9763425FB867A0031B760 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F9763325FB867A0031B760 /* WelcomeViewController.swift */; };
@@ -67,6 +73,12 @@
 		C15BB77125FFB5BA00B69E5D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C15BB77425FFB5C800B69E5D /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		C15BB77725FFC5B500B69E5D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		C18DB89F260366DD0012604C /* ChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewCell.swift; sourceTree = "<group>"; };
+		C18DB8A22603672B0012604C /* ChatViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewCell.xib; sourceTree = "<group>"; };
+		C19F07162602511A00B02697 /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
+		C19F072E260253B800B02697 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		C19F07312602548F00B02697 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		C19F07342602616900B02697 /* ChatViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatViewController.storyboard; sourceTree = "<group>"; };
 		C1F9762C25FB867A0031B760 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F9762F25FB867A0031B760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1F9763125FB867A0031B760 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +259,59 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C19F071126024D8F00B02697 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				C19F071526024DB400B02697 /* Coordinator */,
+				C19F071226024D9D00B02697 /* Model */,
+				C19F071426024DAB00B02697 /* View */,
+				C19F071326024DA400B02697 /* ViewModel */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		C19F071226024D9D00B02697 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C19F071326024DA400B02697 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C19F07312602548F00B02697 /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C19F071426024DAB00B02697 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C19F0737260262FA00B02697 /* Cell */,
+				C19F072E260253B800B02697 /* ChatViewController.swift */,
+				C19F07342602616900B02697 /* ChatViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C19F071526024DB400B02697 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C19F07162602511A00B02697 /* ChatCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		C19F0737260262FA00B02697 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C18DB89F260366DD0012604C /* ChatViewCell.swift */,
+				C18DB8A22603672B0012604C /* ChatViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		C1F9762325FB867A0031B760 = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +342,7 @@
 		C1F9765C25FB88060031B760 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C19F071126024D8F00B02697 /* Chat */,
 				C13912DC2600D85500C5F1EA /* ChatList */,
 				C1F9765E25FB916A0031B760 /* Home */,
 				C15BB75825FF9E7500B69E5D /* Login */,
@@ -395,12 +461,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C15BB74325FF77D100B69E5D /* Assets.xcassets in Resources */,
+				C19F07352602616900B02697 /* ChatViewController.storyboard in Resources */,
 				C139131F2601171300C5F1EA /* ChatListViewController.storyboard in Resources */,
 				C1F9763C25FB867B0031B760 /* LaunchScreen.storyboard in Resources */,
 				C15BB77525FFB5C800B69E5D /* HomeViewController.storyboard in Resources */,
 				C15BB75F25FF9F8A00B69E5D /* LoginViewController.storyboard in Resources */,
 				C139130D2600E6A300C5F1EA /* ChatListCell.xib in Resources */,
 				C1F9766025FB93BF0031B760 /* GoogleService-Info.plist in Resources */,
+				C18DB8A32603672B0012604C /* ChatViewCell.xib in Resources */,
 				C1F9763725FB867A0031B760 /* WelcomeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +480,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18DB8A0260366DD0012604C /* ChatViewCell.swift in Sources */,
+				C19F07322602548F00B02697 /* ChatViewModel.swift in Sources */,
 				C15BB74C25FF7BA200B69E5D /* StoryboardCreatable.swift in Sources */,
 				C13912D82600C20C00C5F1EA /* HomeViewModel.swift in Sources */,
 				C13913012600DD9500C5F1EA /* ChatListViewController.swift in Sources */,
@@ -430,8 +500,10 @@
 				C15BB76F25FFB50300B69E5D /* LoginViewModel.swift in Sources */,
 				C1F9763225FB867A0031B760 /* SceneDelegate.swift in Sources */,
 				C13912CB2600B36D00C5F1EA /* UITextFieldDelegate.swift in Sources */,
+				C19F072F260253B800B02697 /* ChatViewController.swift in Sources */,
 				C15BB76625FFA16100B69E5D /* BaseNavigationVC.swift in Sources */,
 				C15BB77225FFB5BA00B69E5D /* HomeViewController.swift in Sources */,
+				C19F07172602511A00B02697 /* ChatCoordinator.swift in Sources */,
 				C13912CF2600B4B400C5F1EA /* UIViewController.swift in Sources */,
 				C15BB73325FF6F5800B69E5D /* Command.swift in Sources */,
 				C13913172600E83000C5F1EA /* ChatListModel.swift in Sources */,

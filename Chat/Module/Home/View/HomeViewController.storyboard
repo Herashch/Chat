@@ -3,51 +3,22 @@
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
-        <scene sceneID="n0o-nd-czB">
+        <scene sceneID="Bia-YH-Sq5">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="6GT-9h-naH" customClass="HomeViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="l7H-n3-KGt">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbP-MZ-ZES">
-                                <rect key="frame" x="0.0" y="809" width="428" height="83"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="5ay-sq-xaY"/>
-                                    <tabBarItem systemItem="more" id="Zbu-nN-6Tg"/>
-                                </items>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tabBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSJ-Gm-hQo">
-                                <rect key="frame" x="0.0" y="44" width="428" height="765"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="VKC-Fg-2sZ"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vbP-MZ-ZES" secondAttribute="trailing" id="A4C-gn-8G8"/>
-                            <constraint firstItem="vbP-MZ-ZES" firstAttribute="centerX" secondItem="l7H-n3-KGt" secondAttribute="centerX" id="EQw-cm-xaS"/>
-                            <constraint firstItem="vbP-MZ-ZES" firstAttribute="top" secondItem="OSJ-Gm-hQo" secondAttribute="bottom" id="YqH-Ca-o8M"/>
-                            <constraint firstItem="OSJ-Gm-hQo" firstAttribute="top" secondItem="VKC-Fg-2sZ" secondAttribute="top" id="b3v-Ge-lXx"/>
-                            <constraint firstItem="OSJ-Gm-hQo" firstAttribute="leading" secondItem="VKC-Fg-2sZ" secondAttribute="leading" id="fUr-SH-tsI"/>
-                            <constraint firstItem="vbP-MZ-ZES" firstAttribute="leading" secondItem="VKC-Fg-2sZ" secondAttribute="leading" id="gm3-Sf-Ufj"/>
-                            <constraint firstItem="VKC-Fg-2sZ" firstAttribute="bottom" secondItem="vbP-MZ-ZES" secondAttribute="bottom" id="oXl-p9-bcs"/>
-                            <constraint firstItem="VKC-Fg-2sZ" firstAttribute="trailing" secondItem="OSJ-Gm-hQo" secondAttribute="trailing" id="szd-CF-ROe"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tabBar" destination="vbP-MZ-ZES" id="Yrt-nD-6IF"/>
-                        <outlet property="viewContent" destination="OSJ-Gm-hQo" id="PZw-O4-z4n"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="590-9d-m2U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarController storyboardIdentifier="HomeViewController" id="oZN-f5-bsW" customClass="HomeViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fmt-w2-Rrw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dzr-QF-HYu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297" y="107"/>
+            <point key="canvasLocation" x="-920" y="203"/>
         </scene>
     </scenes>
 </document>

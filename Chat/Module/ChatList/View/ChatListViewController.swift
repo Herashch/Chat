@@ -25,19 +25,30 @@ final class ChatListViewController: UIViewController, StoryboardCreatable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
         setupTableView()
+    }
+    
+    func setupNavigation() {
+        title = "Chats"
+        navigationController?.navigationBar.backgroundColor = UIColor.white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addChat))
     }
 }
 
 // MARK: - Private methods
 
 private extension ChatListViewController {
+    
+    @objc func addChat() {
+        
+    }
+    
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ChatListCell", bundle: nil), forCellReuseIdentifier: "ChatListCellID")
         tableView.tableFooterView = UIView()
-        self.navigationItem.largeTitleDisplayMode = .always
     }
 }
 
@@ -58,7 +69,9 @@ extension ChatListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension ChatListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.openChat.perform()
+    }
 }
 
 // MARK: - ChatListViewControllerProtocol

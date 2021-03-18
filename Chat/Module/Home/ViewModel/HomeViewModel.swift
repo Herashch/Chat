@@ -43,5 +43,6 @@ private extension HomeViewModel {
     func setupViewControllers () {
         let coordinator = ChatListCoordinator()
         controllers.append(coordinator.start())
+        controllers.append(UIViewController())
     }
 }

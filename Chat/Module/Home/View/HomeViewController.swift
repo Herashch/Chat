@@ -16,18 +16,7 @@ enum HomeTab: Int {
     case HomeTabEmpty = 1
 }
 
-final class HomeViewController: UIViewController, StoryboardCreatable {
-    
-    // MARK: - Outlets
-    
-    @IBOutlet weak private var tabBar: UITabBar!
-    @IBOutlet weak private var viewContent: UIView!
-    
-    // MARK: - Private properties
-    
-    private var currentTab: HomeTab = HomeTab.HomeTabChats
-    
-    private let chatListView: ChatListViewController = ChatListViewController()
+final class HomeViewController: UITabBarController, StoryboardCreatable {
     
     // MARK: - Public properties
     
@@ -37,20 +26,9 @@ final class HomeViewController: UIViewController, StoryboardCreatable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        setViewControllers(viewModel.getViews(), animated: false)
     }
-}
-
-private extension HomeViewController {
-    func setupView() {
-        let views = viewModel.getViews()
-        views.forEach {
-            $0.view.frame = viewContent.bounds
-            $0.view.isHidden = false
-            $0.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            viewContent.addSubview($0.view)
-        }
-    }
+    
 }
 
 // MARK: - HomeViewControllerProtocol
