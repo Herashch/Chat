@@ -41,7 +41,7 @@ final class ChatListViewController: UIViewController, StoryboardCreatable {
 private extension ChatListViewController {
     
     @objc func addChat() {
-        
+        viewModel.openAdd.perform()
     }
     
     func setupTableView() {

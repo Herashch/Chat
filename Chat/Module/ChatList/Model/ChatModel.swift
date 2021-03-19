@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ChatListModel {
+struct ChatModel {
     let avatar: String
     let content: String
     let title: String
