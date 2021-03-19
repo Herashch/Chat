@@ -1,38 +1,38 @@
 //
-//  LoginViewModel.swift
+//  RegistrationViewModel.swift
 //  Chat
 //
-//  Created by Ivan Herashchenko on 15.03.2021.
+//  Created by Ivan Herashchenko on 19.03.2021.
 //
 
 import Foundation
 import Firebase
 
-protocol LoginViewModelProtocol where Self: AnyObject {
+protocol RegistrationViewModelProtocol {
     func updateEntity(_ email: String, _ password: String)
     var toHome: Command { get }
 }
 
-final class LoginViewModel: LoginViewModelProtocol {
+final class RegistrationViewModel: RegistrationViewModelProtocol {
     
     // MARK: - Private properties
     
     private var entity: LoginAndRegisterModel = .initial
-    private let view: LoginViewControllerProtocol!
-    private let coordinator: LoginCoordinatorProtocol!
+    private let coordinator: RegistrationCoordinatorProtocol!
+    private let view: RegistrationViewControllerProtocol!
     
-    // MARK: - Inits
+    // MARK: - Inits 
     
-    init(coordinator: LoginCoordinatorProtocol, view: LoginViewControllerProtocol) {
+    init(coordinator: RegistrationCoordinatorProtocol, view: RegistrationViewControllerProtocol) {
         self.coordinator = coordinator
         self.view = view
     }
     
-    // MARK: - LoginViewModelProtocol
+    // MARK: - RegistrationViewModelProtocol
     
     lazy var toHome: Command = {
         return .init { [unowned self] in
-            self.login()
+            self.register()
         }
     }()
     
@@ -44,10 +44,10 @@ final class LoginViewModel: LoginViewModelProtocol {
 
 // MARK: - Private methods
 
-private extension LoginViewModel {
-    func login() {
-        Auth.auth().signIn(withEmail: entity.email, password: entity.password) { authResult, error in
-            if error != nil {
+private extension RegistrationViewModel {
+    func register() {
+        Auth.auth().createUser(withEmail: entity.email, password: entity.password) { authResult, error in
+            if let e = error {
                 self.view.showAlert()
             } else {
                 self.coordinator.toHome()

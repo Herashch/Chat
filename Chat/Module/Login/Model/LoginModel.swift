@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginModel {
+struct LoginAndRegisterModel {
     let email: String
     let password: String
     
@@ -15,7 +15,7 @@ struct LoginModel {
                                      password: "") }
 }
 
-extension LoginModel {
+extension LoginAndRegisterModel {
     func updateEmailAndPassword(_ email: String, _ password: String) -> Self {
         .init(email: email, password: password)
     }

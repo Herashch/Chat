@@ -1,17 +1,17 @@
 //
-//  LoginViewContoller.swift
+//  RegistrationViewController.swift
 //  Chat
 //
-//  Created by Ivan Herashchenko on 15.03.2021.
+//  Created by Ivan Herashchenko on 19.03.2021.
 //
 
 import UIKit
 
-protocol LoginViewControllerProtocol {
+protocol RegistrationViewControllerProtocol {
     func showAlert()
 }
 
-final class LoginViewController: UIViewController, StoryboardCreatable {
+final class RegistrationViewController: UIViewController, StoryboardCreatable {
     
     // MARK: - Outlets
     
@@ -20,7 +20,7 @@ final class LoginViewController: UIViewController, StoryboardCreatable {
     
     // MARK: - Public properties
     
-    var viewModel: LoginViewModelProtocol!
+    var viewModel: RegistrationViewModelProtocol!
     
     // MARK: - Life cycle
     
@@ -31,7 +31,7 @@ final class LoginViewController: UIViewController, StoryboardCreatable {
     
     // MARK: - Actions
     
-    @IBAction func login() {
+    @IBAction func register() {
         viewModel.updateEntity(emailTextField.text ?? "", passwordTextField.text ?? "")
         viewModel.toHome.perform()
     }
@@ -39,7 +39,7 @@ final class LoginViewController: UIViewController, StoryboardCreatable {
 
 // MARK: - Private methods
 
-private extension LoginViewController {
+private extension RegistrationViewController {
     func setupView() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -49,9 +49,9 @@ private extension LoginViewController {
     }
 }
 
-// MARK: - LoginViewControllerProtocol
+// MARK: - RegistrationViewControllerProtocol
 
-extension LoginViewController: LoginViewControllerProtocol {
+extension RegistrationViewController: RegistrationViewControllerProtocol {
     func showAlert() {
         let alert = UIAlertController(title: "Error", message: "You entered incorrect data", preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)

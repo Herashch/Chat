@@ -35,6 +35,7 @@ extension WelcomeCoordinator: WelcomeCoordinatorProtocol {
     }
     
     func toRegister() {
-        
+        let coordinator = RegistrationCoordinator(navigation: navigation)
+        coordinator.start()
     }
 }
