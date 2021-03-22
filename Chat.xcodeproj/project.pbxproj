@@ -442,12 +442,12 @@
 		C1F9765C25FB88060031B760 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				C17F53882604DC2800812243 /* Registration */,
 				C18DB8A92603B3630012604C /* AddChat */,
 				C19F071126024D8F00B02697 /* Chat */,
 				C13912DC2600D85500C5F1EA /* ChatList */,
 				C1F9765E25FB916A0031B760 /* Home */,
 				C15BB75825FF9E7500B69E5D /* Login */,
+				C17F53882604DC2800812243 /* Registration */,
 				C1F9766825FB97500031B760 /* Welcome */,
 			);
 			path = Module;

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 protocol ChatListViewModelProtocol {
     func getElements() -> [ChatListCell.ViewModel]
@@ -18,6 +19,7 @@ final class ChatListViewModel: ChatListViewModelProtocol {
     // MARK: - Private properties
     
     private var entity: [ChatModel] = [.initial]
+    private let db = Firestore.firestore()
     private let view: ChatListViewControllerProtocol!
     private let coordinator: ChatListCoordinatorProtocol!
     
@@ -26,7 +28,7 @@ final class ChatListViewModel: ChatListViewModelProtocol {
     init(coordinator: ChatListCoordinatorProtocol, view: ChatListViewControllerProtocol) {
         self.coordinator = coordinator
         self.view = view
-        configure()
+        fetchChatData()
     }
     
     // MARK: - ChatListViewModelProtocol
@@ -53,11 +55,24 @@ final class ChatListViewModel: ChatListViewModelProtocol {
 // MARK: - Private methods
 
 private extension ChatListViewModel {
-    func configure() {
-        entity = [.init(avatar: "FlowerGirl", content: "Content1", title: "Title1", time: Date(), action: .nop),
-                  .init(avatar: "FlowerGirl", content: "Content2", title: "Title2", time: Date(), action: .nop),
-                  .init(avatar: "FlowerGirl", content: "Content3", title: "Title3", time: Date(), action: .nop),
-                  .init(avatar: "FlowerGirl", content: "Content4", title: "Title4", time: Date(), action: .nop),
-                  .init(avatar: "FlowerGirl", content: "Content5", title: "Title5", time: Date(), action: .nop)]
+    func fetchChatData() {
+        entity.removeAll()
+        db.collection("Chat")
+            .whereField("users", arrayContains: Auth.auth().currentUser!.uid)
+            .addSnapshotListener { querySnapshot, error in
+                if error != nil {
+                    print(error)
+                    return
+                } else {
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        self.entity.removeAll()
+                        for doc in snapshotDocuments {
+                            let data = doc.data()
+                            self.entity.append(.init(avatar: "FlowerGirl", content: data["lastMessage"] as! String, id: doc.documentID, title: data["name"] as! String, time: Date(timeIntervalSince1970: data["update"] as! TimeInterval), action: .nop))
+                        }
+                    }
+                }
+                self.view.refresh()
+            }
     }
 }

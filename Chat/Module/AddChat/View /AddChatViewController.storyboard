@@ -28,45 +28,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uqG-5r-eoW">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uqG-5r-eoW">
                                 <rect key="frame" x="85" y="57.5" width="309" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MTV-at-iW5">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MTV-at-iW5">
                                 <rect key="frame" x="130.5" y="98.5" width="263.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xU9-uH-FBd">
-                                <rect key="frame" x="20" y="149" width="48" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XKd-IH-wgK">
-                                <rect key="frame" x="88" y="144" width="51" height="31"/>
-                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="baX-zN-tSZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uqG-5r-eoW" firstAttribute="centerY" secondItem="rdE-vs-9mE" secondAttribute="centerY" id="2pi-ky-fYJ"/>
-                            <constraint firstItem="xU9-uH-FBd" firstAttribute="leading" secondItem="CQB-s8-pdQ" secondAttribute="leading" id="BHo-Xw-nyV"/>
                             <constraint firstItem="uqG-5r-eoW" firstAttribute="leading" secondItem="rdE-vs-9mE" secondAttribute="trailing" constant="20" id="CDk-C0-jOd"/>
                             <constraint firstItem="CQB-s8-pdQ" firstAttribute="leading" secondItem="baX-zN-tSZ" secondAttribute="leading" constant="20" id="EI4-WZ-1Md"/>
                             <constraint firstItem="MTV-at-iW5" firstAttribute="leading" secondItem="CQB-s8-pdQ" secondAttribute="trailing" constant="20" id="Khv-Lv-PjX"/>
                             <constraint firstItem="baX-zN-tSZ" firstAttribute="trailing" secondItem="uqG-5r-eoW" secondAttribute="trailing" constant="20" id="LSV-II-icz"/>
                             <constraint firstItem="baX-zN-tSZ" firstAttribute="trailing" secondItem="MTV-at-iW5" secondAttribute="trailing" constant="20" id="OsX-t3-ruG"/>
                             <constraint firstItem="rdE-vs-9mE" firstAttribute="leading" secondItem="baX-zN-tSZ" secondAttribute="leading" constant="20" id="Rfq-WX-LcT"/>
-                            <constraint firstItem="XKd-IH-wgK" firstAttribute="top" secondItem="MTV-at-iW5" secondAttribute="bottom" constant="11.5" id="SRy-aq-5fc"/>
                             <constraint firstItem="MTV-at-iW5" firstAttribute="centerY" secondItem="CQB-s8-pdQ" secondAttribute="centerY" id="Yrt-F6-5rt"/>
-                            <constraint firstItem="XKd-IH-wgK" firstAttribute="leading" secondItem="xU9-uH-FBd" secondAttribute="trailing" constant="20" id="avJ-5F-iaq"/>
                             <constraint firstItem="CQB-s8-pdQ" firstAttribute="top" secondItem="rdE-vs-9mE" secondAttribute="bottom" constant="20" id="ff4-CZ-Hzf"/>
                             <constraint firstItem="rdE-vs-9mE" firstAttribute="top" secondItem="baX-zN-tSZ" secondAttribute="top" constant="20" id="tfP-co-cSG"/>
-                            <constraint firstItem="XKd-IH-wgK" firstAttribute="centerY" secondItem="xU9-uH-FBd" secondAttribute="centerY" id="yMK-WY-JSJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="MTV-at-iW5" id="S6Z-P6-Rzd"/>
+                        <outlet property="nameTextField" destination="uqG-5r-eoW" id="qS3-Ul-MC9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kie-w5-GHS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

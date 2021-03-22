@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ChatListViewControllerProtocol {
-    
+    func refresh()
 }
 
 final class ChatListViewController: UIViewController, StoryboardCreatable {
@@ -29,19 +29,19 @@ final class ChatListViewController: UIViewController, StoryboardCreatable {
         setupTableView()
     }
     
-    func setupNavigation() {
-        title = "Chats"
-        navigationController?.navigationBar.backgroundColor = UIColor.white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addChat))
-    }
 }
 
 // MARK: - Private methods
 
 private extension ChatListViewController {
-    
     @objc func addChat() {
         viewModel.openAdd.perform()
+    }
+    
+    func setupNavigation() {
+        title = "Chats"
+        navigationController?.navigationBar.backgroundColor = UIColor.white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addChat))
     }
     
     func setupTableView() {
@@ -77,5 +77,7 @@ extension ChatListViewController: UITableViewDelegate {
 // MARK: - ChatListViewControllerProtocol
 
 extension ChatListViewController: ChatListViewControllerProtocol {
-    
+    func refresh() {
+        tableView.reloadData()
+    }
 }

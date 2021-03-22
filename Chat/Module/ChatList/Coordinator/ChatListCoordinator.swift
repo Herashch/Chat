@@ -32,8 +32,9 @@ extension ChatListCoordinator: ChatListCoordinatorProtocol {
     }
     
     func toAddChat() {
-        let coordinator = AddChatCoordinator(navigation: navigation)
-        coordinator.start()
+        let coordinator = AddChatCoordinator()
+        let view = coordinator.start()
+        navigation.present(view, animated: true, completion: nil)
     }
     
     func toChat() {
