@@ -10,8 +10,8 @@ import Firebase
 
 protocol ChatListViewModelProtocol {
     func getElements() -> [ChatListCell.ViewModel]
+    func openChat(id: String, title: String)
     var openAdd: Command { get }
-    var openChat: Command { get }
 }
 
 final class ChatListViewModel: ChatListViewModelProtocol {
@@ -35,7 +35,7 @@ final class ChatListViewModel: ChatListViewModelProtocol {
     
     func getElements() -> [ChatListCell.ViewModel] {
         entity.enumerated().map {
-            return ChatListCell.ViewModel(avatar: $0.element.avatar, content: $0.element.content, title: $0.element.title, time: $0.element.time, action: $0.element.action)
+            return ChatListCell.ViewModel(avatar: $0.element.avatar, content: $0.element.content, id: $0.element.id, title: $0.element.title, time: $0.element.time, action: $0.element.action)
         }
     }
     
@@ -45,11 +45,9 @@ final class ChatListViewModel: ChatListViewModelProtocol {
         }
     }()
     
-    lazy var openChat: Command = {
-        return .init { [unowned self] in
-            self.coordinator.toChat()
-        }
-    }()
+    func openChat(id: String, title: String) {
+        self.coordinator.toChat(id: id, title: title)
+    }
 }
 
 // MARK: - Private methods
@@ -70,9 +68,12 @@ private extension ChatListViewModel {
                             let data = doc.data()
                             self.entity.append(.init(avatar: "FlowerGirl", content: data["lastMessage"] as! String, id: doc.documentID, title: data["name"] as! String, time: Date(timeIntervalSince1970: data["update"] as! TimeInterval), action: .nop))
                         }
+                        self.entity.sort {
+                            $0.time > $1.time
+                        }
+                        self.view.refresh()
                     }
                 }
-                self.view.refresh()
             }
     }
 }

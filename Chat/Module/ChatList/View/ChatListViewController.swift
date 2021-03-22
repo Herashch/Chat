@@ -70,7 +70,7 @@ extension ChatListViewController: UITableViewDataSource {
 
 extension ChatListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.openChat.perform()
+        viewModel.openChat(id: viewModel.getElements()[indexPath.row].id, title: viewModel.getElements()[indexPath.row].title)
     }
 }
 

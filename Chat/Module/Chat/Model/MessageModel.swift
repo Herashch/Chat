@@ -8,10 +8,12 @@
 import Foundation
 
 struct MessageModel {
-    let sender: String
-    let text: String
+    let chatID: String
     let date: Date
+    let id: String
+    let text: String
+    let userID: String
     
-    static var initial: Self { .init(sender: "", text: "", date: Date())
+    static var initial: Self { .init(chatID: "", date: Date(), id: "", text: "", userID: "")
     }
 }

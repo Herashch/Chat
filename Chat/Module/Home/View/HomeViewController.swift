@@ -26,9 +26,23 @@ final class HomeViewController: UITabBarController, StoryboardCreatable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViewControllers(viewModel.getViews(), animated: false)
+        setupTabBar()
     }
     
+}
+
+// MARK: - Private properties 
+
+private extension HomeViewController {
+    func setupTabBar() {
+        setViewControllers(viewModel.getViews(), animated: false)
+        if let tabBarItems = tabBar.items {
+            tabBarItems[0].title = "Chats"
+            tabBarItems[1].title = "Empty"
+            tabBarItems[0].image = UIImage(systemName: "message")
+            tabBarItems[1].image = UIImage(systemName: "trash.fill")
+        }
+    }
 }
 
 // MARK: - HomeViewControllerProtocol

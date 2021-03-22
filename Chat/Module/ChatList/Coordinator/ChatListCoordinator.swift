@@ -10,7 +10,7 @@ import UIKit
 protocol ChatListCoordinatorProtocol {
     func start() -> UIViewController
     func toAddChat()
-    func toChat()
+    func toChat(id: String, title: String)
 }
 
 
@@ -37,8 +37,8 @@ extension ChatListCoordinator: ChatListCoordinatorProtocol {
         navigation.present(view, animated: true, completion: nil)
     }
     
-    func toChat() {
-        let coordinator = ChatCoordinator(navigation: navigation)
+    func toChat(id: String, title: String) {
+        let coordinator = ChatCoordinator(navigation: navigation, chatID: id, title: title)
         coordinator.start()
     }
 }

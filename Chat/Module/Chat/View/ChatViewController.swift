@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ChatViewControllerProtocol {
-    
+    func refresh()
 }
 
 final class ChatViewController: UIViewController, StoryboardCreatable {
@@ -28,7 +28,16 @@ final class ChatViewController: UIViewController, StoryboardCreatable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        title = "Title1"
+        title = viewModel.getTitle()
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func sendMessage() {
+        if textView.text != "" {
+            viewModel.sendMessage(text: textView.text)
+            textView.text = ""
+        }
     }
     
 }
@@ -47,16 +56,31 @@ private extension ChatViewController {
 
 extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.getElements().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatViewCell
-        cell.configure()
+        cell.configure(with: viewModel.getElements()[indexPath.row])
+        
+        if viewModel.getElements()[indexPath.row].userID == viewModel.getUserID() {
+            cell.leftImage.isHidden = true
+            cell.rightImage.isHidden = false
+        } else {
+            cell.leftImage.isHidden = false
+            cell.rightImage.isHidden = true
+        }
+        
         return cell
     }
 }
 
 extension ChatViewController: ChatViewControllerProtocol {
-    
+    func refresh() {
+        tableView.reloadData()
+        if viewModel.getElements().count > 0 {
+            let indexPath = IndexPath(row: viewModel.getElements().count - 1, section: 0)
+            self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+        }
+    }
 }

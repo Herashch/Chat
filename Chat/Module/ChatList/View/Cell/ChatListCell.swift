@@ -64,11 +64,12 @@ extension ChatListCell {
     struct ViewModel {
         let avatar: String
         let content: String
+        let id: String
         let title: String
         let time: Date
         let action: Command
         
-        static var initial: Self { .init(avatar: "", content: "", title: "", time: Date(), action: .nop)
+        static var initial: Self { .init(avatar: "", content: "", id: "", title: "", time: Date(), action: .nop)
         }
     }
 }

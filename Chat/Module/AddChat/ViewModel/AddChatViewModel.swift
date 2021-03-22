@@ -17,6 +17,7 @@ final class AddChatViewModel: AddChatViewModelProtocol {
     
     // MARK: - Private properties
     
+    private var newChatID: String = ""
     private let db = Firestore.firestore()
     private let coordinator: AddChatCoordinatorProtocol!
     private let view: AddChatViewControllerProtocol!
@@ -53,8 +54,7 @@ final class AddChatViewModel: AddChatViewModelProtocol {
                     if let snapshotDocuments = querySnapshot?.documents {
                         if snapshotDocuments.count == 1 {
                             for doc in snapshotDocuments {
-                                let data = doc.data()
-                                self.addChat(name: name, id: data["id"] as! String, email: email)
+                                self.addChat(name: name, id: doc.documentID, email: email)
                             }
                         } else {
                             self.view.showAlert(text: "No find email")
@@ -63,23 +63,30 @@ final class AddChatViewModel: AddChatViewModelProtocol {
                 }
             }
     }
-    
+}
+
+// MARK: - Private methods
+
+private extension AddChatViewModel {
     func addChat(name: String, id: String, email: String) {
-        let idChat = db.collection("Chat").addDocument(data: ["group": false,
-                                                              "lastMessage": "No message",
-                                                              "name": name,
-                                                              "messages": [""],
-                                                              "update": Date().timeIntervalSince1970,
-                                                              "users": [Auth.auth().currentUser!.uid, id]
+        newChatID = db.collection("Chat").addDocument(data: ["group": false,
+                                                             "lastMessage": "No message",
+                                                             "name": name,
+                                                             "messages": [""],
+                                                             "update": Date().timeIntervalSince1970,
+                                                             "users": [Auth.auth().currentUser!.uid, id]
         ]) { (error) in
             if error != nil {
                 print(error)
             } else {
+                self.updateUserData(id: id)
                 self.coordinator.close()
             }
         }.documentID
-        db.collection("User").document(Auth.auth().currentUser!.uid).updateData(["chats": FieldValue.arrayUnion([idChat])])
-        db.collection("User").document(id).updateData(["chats": FieldValue.arrayUnion([idChat])])
     }
     
+    func updateUserData(id: String) {
+        db.collection("User").document(Auth.auth().currentUser!.uid).updateData(["chats": FieldValue.arrayUnion([newChatID])])
+        db.collection("User").document(id).updateData(["chats": FieldValue.arrayUnion([newChatID])])
+    }
 }
